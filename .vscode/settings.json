@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/c15c72f3-9c34-4c17-b170-1dd47ae73560/AppServices/subscriptions/c15c72f3-9c34-4c17-b170-1dd47ae73560/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/CoinHiveFX",
+  "appService.deploySubpath": "."
+}

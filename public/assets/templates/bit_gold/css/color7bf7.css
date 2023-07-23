@@ -1,0 +1,174 @@
+
+.base--color,.header .main-menu li a:hover, .header .main-menu li a:focus,.page-breadcrumb li:first-child::before,.page-breadcrumb li a:hover,.d-widget .icon{
+    color: #f29f1c !important;
+}
+
+.border-btn:hover, .cmn-btn, .cmn-btn:hover,.base--bg, .team-card:hover, .subscribe-form .subscribe-btn, .pagination li.disabled .page-link,.pagination li .page-link:hover, .pagination li.active .page-link, .contact-item, .header .main-menu li .sub-menu,.d-widget,.investor-card:hover,.blog-details__footer .social__links li a:hover,.sidebar .widget .widget__title::after,select option, .account-menu .icon i,.account-menu .icon .account-submenu{
+    background-color: #f29f1c !important;
+}
+
+.border-btn:hover,.package-card, .page-item.disabled .page-link,.pagination li .page-link:hover, .pagination li.active .page-link {
+    border-color: #f29f1c;
+}
+
+.investor-card:hover {
+    box-shadow: 0 5px 10px 5px #f29f1c80;
+}
+.package-card, .package-card:hover {
+    box-shadow: 0 5px 15px #f29f1c80;
+}
+
+.package-card__features li {
+    border-bottom: 1px solid #f29f1c59;
+}
+.profit-calculator-wrapper {
+    border: 2px solid #f29f1c80;
+    box-shadow: 0 0 15px #f29f1c80;
+}
+select {
+    border: 1px solid #f29f1c73;
+}
+input[type="text"]:read-only, input[type="email"]:read-only, input[type="text"]:disabled, input[type="email"]:disabled {
+    border-color: #f29f1c;
+}
+
+.work-card__icon {
+    border: 3px solid #f29f1c;
+    box-shadow: 0 0 15px 3px #f29f1ca6;
+}
+
+.work-card__icon .step-number {
+    border: 2px solid #f29f1c;
+}
+.work-item::before {
+    border-top: 1px dashed #f29f1c;
+}
+
+.cmn-accordion .card-header .btn {
+    background-color: #f29f1c;
+}
+
+.testimonial-card {
+    background-color: #f29f1ca6;
+    box-shadow: 0 5px 0px #f29f1c;
+}
+
+.card .card-header {
+    background-color: #f29f1c;
+}
+
+.cmn-accordion .card-header {
+    border: 1px solid #f29f1c73;
+}
+.testimonial-card__content {
+    border-bottom: 1px solid #f29f1c80;
+}
+
+.testimonial-card__client .thumb {
+    border: 3px solid #f29f1c;
+}
+.testimonial-slider .slick-dots li.slick-active button {
+    background-color: #f29f1c;
+}
+.team-card:hover {
+    background-color: #f29f1c;
+    box-shadow: 0 5px 10px 5px #f29f1c80;
+}
+.nav-tabs.custom--style-two .nav-item .nav-link.active {
+    border-color: #f29f1c;
+    background-color: #f29f1c;
+}
+.nav-tabs.custom--style-two .nav-item .nav-link {
+    border: 1px solid #f29f1c73;
+}
+.table.style--two thead {
+    background-color: #f29f1c;
+}
+.table.style--two tr th, .table.style--two tr td {
+    border-top-color: #f29f1c40;
+}
+.table.style--two {
+    box-shadow: 0 5px 5px 0 #f29f1c40;
+}
+.border-top-1 {
+    border-top: 1px solid #f29f1c80;
+}
+.cta-wrapper {
+    box-shadow: 0 3px 15px #f29f1c80;
+}
+.brand-item {
+    border: 2px solid #f29f1c80;
+}
+.blog-card {
+    box-shadow: 0 0 0px 2px #f29f1ccc;
+}
+.form-control {
+    border: 1px solid #f29f1c73;
+}
+.form-control:focus {
+    box-shadow: 0 2px 5px #f29f1c80;
+    border-color: #f29f1c;
+}
+.footer {
+    border-top: 2px solid #f29f1c80;
+}
+.scroll-to-top {
+    background-color: #f29f1c;
+}
+.subscribe-wrapper {
+    box-shadow: 0 0 10px #f29f1c80;
+}
+.choose-card {
+    background-color: #29324180;
+}
+.pagination li .page-link {
+    border: 1px solid #f29f1c73;
+}
+a:hover {
+    color: #f29f1c;
+}
+.contact-item {
+    box-shadow: 0 5px 15px #f29f1c80;
+}
+.account-card {
+    box-shadow: 0 0 10px 2px #f29f1c73;
+}
+.account-card__header {
+    padding: 50px 30px;
+    border-bottom: 2px solid #f29f1c80;
+}
+input[type="text"]:read-only, input[type="email"]:read-only, input[type="text"]:disabled, input[type="email"]:disabled {
+    background-color: #f29f1c59;
+}
+
+#phoneInput .letter {
+    border: 1px solid #f29f1c !important;
+}
+#phoneInput .letter + .letter {
+    border-left: 1px solid #f29f1c !important;
+}
+.card {
+    box-shadow: 0 0 15px #f29f1c80;
+    background-color: #293241;
+    border: 2px solid #f29f1c80;
+}
+.list-group-item {
+    border: 1px dashed #f29f1c54;
+}
+.input-group-text {
+    background-color: #f29f1c;
+    border: 1px solid #f29f1c;
+}
+.footer__bottom, .header.menu-fixed .header__bottom, .profit-calculator-wrapper, .work-card__icon , .work-card__icon .step-number, .table.style--two, .brand-item,.blog-card,.account-card,.sidebar .widget{
+    background-color: #293241;
+}
+.sidebar .widget{
+    border: 1px solid #f29f1c;    
+}
+
+.header__bottom {
+    background-color: #29324180;
+}
+
+.cookie__wrapper{
+    background: #293241}

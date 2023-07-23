@@ -1,0 +1,39 @@
+<p
+  class="text-left px-6 py-6 text-2xl font-bold text-white"
+>
+  Recent transactions
+</p>
+
+<div class="overflow-x-auto bg-gray-800 w-12/12 mx-auto md:mx-0 md:w-full">
+  [/ if (transactions.length !== 0) { /]
+
+  <table class=" w-full">
+    <tr class="text-center text-lg text-white bg-gray-800 font-bold">
+      <th class="py-6">Date</th>
+      <th>Transaction ID</th>
+      <th>Amount</th>
+
+      <th>Details</th>
+    </tr>
+
+    [/ transactions.map((t)=>{ /]
+
+    <tr
+      class="text-center hover:bg-gray-50 cursor-pointer text-base text-black bg-gray-800"
+    >
+      <td class="py-4 px-2">[/= t.date.toLocaleString() /]</td>
+      <td class="px-2">[/=t.ref/]</td>
+      <td class="px-2">$/BTC [/=t.amount/]</td>
+      <td class="text-sm overflow-x-auto px-2">[/=t.details/]</td>
+    </tr>
+
+    [/ }) /]
+  </table>
+  [/ } else { /]
+
+  <p class="p-6 w-full bg-gray-800 text-white text-center text-xl">
+    No recent transactions
+  </p>
+
+  [/ } /]
+</div>

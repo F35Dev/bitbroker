@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+<!-- Primary Meta Tags -->
+<title>Bitbroker — Speedy and guaranteed returns with insured investments</title>
+<meta name="title" content="Bitbroker — Speedy and guaranteed returns with insured investments">
+<meta name="description" content="Not only do we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security of your investment.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://Bitbroker.azurewebsites.net/">
+<meta property="og:title" content="Bitbroker — Speedy and guaranteed returns with insured investments">
+<meta property="og:description" content="Not only do we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security of your investment.">
+<meta property="og:image" content="https://www.bitrademining.com/image/pc_main.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="http://Bitbroker.azurewebsites.net/">
+<meta property="twitter:title" content="Bitbroker — Speedy and guaranteed returns with insured investments">
+<meta property="twitter:description" content="Not only do we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security of your investment.">
+<meta property="twitter:image" content="https://www.bitrademining.com/image/pc_main.png">
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>[/= siteName/] | [/= tagline /]</title>
+
+    [/- include('__externals__.ejs'); /]
+  </head>
+  <body class="bg-gray-900">
+    <!-- QR CODE -->
+
+    <div
+      id="btc"
+      class="fixed hidden top-4 left-0 right-0 mx-auto bg-white md:max-w-4xl z-30 pb-6"
+    >
+      <div class="relative p-4">
+        <i
+          onclick="this.parentElement.parentElement.style.display = 'none'"
+          class="bi-x text-xl absolute top-0 right-0 p-2 inline-block bg-gray-100 hover:bg-gray-300 text-black cursor-pointer rounded-tr"
+        ></i>
+
+        <img
+          src="/images/bitcoin.jpg"
+          width="400"
+          height="400"
+          class="object-cover mx-auto block"
+          alt="details"
+        />
+
+        <br />
+        <p class="ml-4 text-center text-sm text-black">
+          Copy the address below or scan the QR
+        </p>
+        <br />
+        <p class="text-center text-sm text-black font-bold">[/=locals.BTC /]</p>
+      </div>
+    </div>
+
+
+
+    <div
+    id="eth"
+    class="fixed hidden top-4 left-0 right-0 mx-auto bg-white md:max-w-4xl z-30 pb-6"
+  >
+    <div class="relative p-4">
+      <i
+        onclick="this.parentElement.parentElement.style.display = 'none'"
+        class="bi-x text-xl absolute top-0 right-0 p-2 inline-block bg-gray-100 hover:bg-gray-300 text-black cursor-pointer rounded-tr"
+      ></i>
+
+      <img
+        src="/images/ethereum.jpg"
+        width="400"
+        height="400"
+        class="object-cover mx-auto block"
+        alt="details"
+      />
+
+      <br />
+      <p class="ml-4 text-center text-sm text-black">
+        Copy the address below or scan the QR
+      </p>
+      <br />
+      <p class="text-center text-sm text-black font-bold">[/=locals.ETH /]</p>
+    </div>
+  </div>
+
+    <!-- InfoBoard  -->
+
+    [/ let textToShow = req.flash('info') /] [/ if (textToShow.length) { /]
+    <div
+      class="fixed top-4 left-0 right-0 mx-auto rounded bg-white md:max-w-2xl z-30 pb-6"
+    >
+      <div class="relative p-4">
+        <i
+          class="bi-info-circle text-xl absolute top-0 left-0 p-2 inline-block rounded-l rounded-t"
+        ></i>
+
+        <i
+          onclick="this.parentElement.parentElement.style.display = 'none'"
+          class="bi-x text-xl absolute top-0 right-0 p-2 inline-block bg-gray-100 hover:bg-gray-300 text-black cursor-pointer rounded-tr"
+        ></i>
+
+        <br /><br />
+        <p class="ml-4 text-left text-xl text-blue-500">[/= textToShow/]</p>
+      </div>
+    </div>
+    <!-- Info  -->
+
+    [/ } /]
+
+    <section class="bg-cover" style="background-image: url('/aleksi.jpg')">
+      <header class="sticky top-0 left-0 right-0 w-full z-2 px-4 bg-gray-900">
+        <div class="flex flex-wrap items-center justify-between py-2">
+          <div class="w-1/2 md:w-auto">
+            <a href="">
+              <img src="/logo.png" alt="" height="60" width="60" />
+            </a>
+          </div>
+
+          <a href="/banking/app">
+            <i
+              class="bi bi-person text-white relative left-12 md:hidden bg-yellow-600 p-3 rounded-md"
+            ></i>
+          </a>
+
+          <label for="menu-toggle" class="pointer-cursor md:hidden block"
+            ><svg
+              class="fill-current text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg
+          ></label>
+
+          <input class="hidden" type="checkbox" id="menu-toggle" />
+
+          <div class="hidden md:block w-full md:w-auto" id="menu">
+            <nav
+              class="w-full bg-gray-800 md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none"
+            >
+              <ul class="md:flex items-center md:space-x-6 font-bold">
+                <li>
+                  <a
+                    class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500"
+                    href="/banking/app"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500"
+                    href="#"
+                    >Investment</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500"
+                    href="/banking/app?entity=transactions&widget=De"
+                    >Deposit</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500"
+                    href="/banking/app?entity=transactions&widget=Wi"
+                    >Withdrawal</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500"
+                    href="/banking/app?entity=transactions&widget=Ve"
+                    >Verify payment</a
+                  >
+                </li>
+                <!-- <li><a class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500" href="#">Referral</a></li> -->
+                <li>
+                  <a
+                    class="py-2 text-white inline-block md:text-white md:hidden lg:block hover:text-yellow-500"
+                    href="/banking/app?entity=settings"
+                    >Account</a
+                  >
+                </li>
+
+                <li>
+                  <div
+                    class="flex flex-row space-x-3 ml-24 md:ml-0 md:flex-row"
+                  >
+                    <a href="/banking/app">
+                      <i
+                        class="bi bi-person md text-white bg-yellow-600 p-2 self-center rounded-md"
+                      ></i>
+                    </a>
+                    <!-- Button -->
+                    <select
+                      name=""
+                      id=""
+                      class="bg-transparent px-2 font-normal border border-yellow-600 text-white md:text-white rounded-md"
+                    >
+                      <!-- <option value="" class="text-black">Chinese</option> -->
+                      <option value="" class="text-black">English</option>
+                    </select>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+      <marquee
+        behavior=""
+        direction="Left"
+        class="z-50 bg-black py-2 text-white"
+        >Ethereum(ETH) &nbsp;&nbsp;&nbsp; Tether(USDT) &nbsp;&nbsp;&nbsp;
+        Binance(BNB) &nbsp;&nbsp;&nbsp; Polygon(MATIC) &nbsp;&nbsp;&nbsp;
+        Bitcoin(BTC)</marquee
+      >
+
+      <div class="h-100 lg:mt-0 space-y-8 mt-0 py-16 md:py-24 md:ml-8 px-4">
+        <div>
+          <!-- Conditional Template Inclusion  -->
+
+          [/ if ( locals.entity === 'tx_logs' ){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-speedometer2"></i>
+            Dashboard
+          </p>
+          [/ } /] [/ if ( locals.entity === 'dashboard'){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-speedometer2"></i>
+            Dashboard
+          </p>
+          [/ } /] [/ if ( locals.entity === 'transactions'){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-journal-album"></i>
+            Transactions
+          </p>
+          [/ } /] [/ if (locals.entity === 'deposits'){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-cash-stack"></i>
+            Deposits
+          </p>
+          [/ } /] [/ if (locals.entity === 'notifications'){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-bell"></i>
+            Notifications
+          </p>
+          [/ } /] [/ if (locals.entity === 'withdrawals'){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-download"></i>
+            Withdrawals
+          </p>
+          [/ } /] [/ if (locals.entity === 'settings'){ /]
+          <p
+            class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+          >
+            <i class="bi-sliders"></i>
+            Settings
+          </p>
+          [/ } /]
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 
+    <div class="my-4 px-4">
+    <p style="font-family: cursive;" class="text-white py-4 font-bold text-lg md:text-xl">Referral link</p>
+    <p type="text" class="py-4 bg-white/30 px-6 text-white rounded text-sm font-bold"> https://Bitbroker.com/r/eyr6e </p>  
+    </div> -->
+
+    [/ if( locals.entity === 'transactions' ){ /] [/-
+    include('__transactions__') /] [/ } /] [/ if( (locals.entity !== 'deposits')
+    && ( locals.entity !== 'withdrawals') && ( locals.entity !== 'settings') &&
+    ( locals.entity !== 'notifications') && ( locals.entity !== 'transactions')
+    ) { /]
+
+    <div class="mx-auto my-4 py-4  px-4 md:px-0">
+      <div class="flex flex-col space-y-6">
+        <div
+          class="flex flex-col space-y-6 self-stretch md:hidden md:space-x-6"
+        >
+          <div class="bg-yellow-500 py-6 px-4 rounded-xl md:w-1/3">
+            <div class="flex flex-row justify-between">
+              <div class="flex flex-col">
+                <p class="text-black font-bold font-semibold">
+                  Deposit Wallet Balance
+                </p>
+                <p class="text-white font-bold text-3xl md:text-4xl py-2">
+                  $ [/= user.wallet /]
+                </p>
+              </div>
+              <i
+                class="bi bi-currency-dollar text-yellow-500 self-center bg-black font-bold text-2xl px-3 py-2 rounded-md"
+              ></i>
+            </div>
+          </div>
+
+          <div class="bg-yellow-500 py-6 px-4 rounded-xl md:w-1/3">
+            <div class="flex flex-row justify-between">
+              <div class="flex flex-col">
+                <p class="text-black font-bold font-semibold">Bonus Balance</p>
+                <p class="text-white font-bold text-3xl md:text-4xl py-2">
+                  $ [/= user.bonus /]
+                </p>
+              </div>
+              <i
+                class="bi bi-wallet2 text-yellow-500 bg-black self-center font-bold text-2xl px-3 py-2 rounded-md"
+              ></i>
+            </div>
+          </div>
+          <!-- <div class="bg-yellow-500 py-6 px-4 rounded-xl md:w-1/3">
+                    <div class="flex flex-row  justify-between">
+                        <div class="flex flex-col">
+                            <p class="text-black font-bold font-semibold">Total Invest</p>
+                            <p class="text-white font-bold text-3xl md:text-4xl py-2">$0</p>
+
+                        </div>
+                        <i class="bi bi-currency-dollar text-yellow-500 self-center bg-black font-bold text-2xl px-3 py-2 rounded-md"></i>
+
+                    </div>
+
+                </div> -->
+        </div>
+        <div class="flex flex-col space-y-6 md:hidden md:space-x-6">
+          <div class="bg-yellow-500 py-6 px-4 rounded-xl md:w-1/3">
+            <div class="flex flex-row justify-between">
+              <div class="flex flex-col">
+                <p class="text-black font-bold font-semibold">Total Deposit</p>
+                <p class="text-white font-bold text-3xl md:text-4xl py-2">
+                  $ [/= user.deposits /]
+                </p>
+              </div>
+              <i
+                class="bi bi-credit-card text-yellow-500 self-center bg-black font-bold text-2xl px-3 py-2 rounded-md"
+              ></i>
+            </div>
+          </div>
+
+          <div class="bg-yellow-500 py-6 px-4 rounded-xl md:w-1/3">
+            <div class="flex flex-row justify-between">
+              <div class="flex flex-col">
+                <p class="text-black font-bold font-semibold">Total Withdraw</p>
+                <p class="text-white font-bold text-3xl md:text-4xl py-2">
+                  $ [/= user.withdrawals /]
+                </p>
+              </div>
+              <i
+                class="bi bi-cloud-arrow-down-fill self-center text-yellow-500 bg-black font-bold text-2xl px-3 py-2 rounded-md"
+              ></i>
+            </div>
+          </div>
+          <!-- <div class="bg-yellow-500 py-6 px-4 rounded-xl md:w-1/3">
+                    <div class="flex flex-row  justify-between">
+                        <div class="flex flex-col">
+                            <p class="text-black font-bold font-semibold">Referral Earnings</p>
+                            <p class="text-white font-bold text-3xl md:text-4xl py-2">$10</p>
+
+                        </div>
+                        <i class="bi bi-people-fill self-center text-yellow-500 bg-black font-bold text-2xl px-3 py-2 rounded-md"></i>
+
+                    </div>
+
+                </div> -->
+        </div>
+      </div>
+    </div>
+
+    [/ } /]
+
+    <div class="flex flex-col md:flex-row justify-aound items-center px-4" >
+
+
+        <div class='w-1/4 bg-gray-100/50 self-start min-h-screen pb-16 hidden md:block '>
+
+            <div>
+
+                <div>
+                    <img src="[/= user.avatar || '/07.png' /]"
+                         height="300"
+                         width="200"
+                         alt='Avatar'
+                         class="rounded-full block mx-auto my-4 border-4 border-gray-300" />
+
+                    <h2
+                        class='font-semibold text-center text-black px-1 text-xl md:text-2xl capitalize'>
+                        [/= auth.user ? auth.user.firstname + ' ' + auth.user.lastname :
+                        "Anonymous Anonymous" /] </h2>
+                    <p class=' text-center px-1 text-base md:text-lg '>
+                        [/= auth.user ? auth.user.email : "Anonymous " /] </p>
+                </div>
+
+                <div class='flex flex-col  justify-center items-center rounded mt-8 '>
+
+                    <a href="[/=appUrl/]/?entity=dashboard"
+                       class='py-4 hover:bg-gray-300  capitalize block w-full text-left text-xl px-6
+
+                       [/ if (entity==="dashboard") { /]
+                       bg-blue-500 text-white
+                       [/}/]
+
+                       '>
+                        <i class='
+                       bi-speedometer2
+                       text-xl
+                       px-2'></i>
+                        Dashboard
+                    </a>
+                    <a href="[/=appUrl/]/?entity=transactions"
+                       class='py-4 hover:bg-gray-300 capitalize block w-full text-left text-xl px-6
+
+                                                    [/ if (entity==="transactions") { /]
+                                                   bg-blue-500 text-white
+                                                   [/}/]
+
+                                                   '>
+                        <i class='bi-journal-album text-xl px-2'></i>
+                        Transactions
+                    </a>
+
+                    <a href="[/=appUrl/]/?entity=deposits"
+                       class='py-4 hover:bg-gray-300 capitalize block w-full text-left text-xl px-6
+
+                        [/ if (entity==="deposits") { /]
+                       bg-blue-500 text-white
+                       [/}/]
+
+                       '>
+                        <i class='bi-cash-stack text-xl px-2'></i>
+                        Deposit history
+                    </a><a href="[/=appUrl/]/?entity=withdrawals"
+                       class='py-4 hover:bg-gray-300 capitalize block w-full text-left text-xl px-6
+
+                        [/ if (entity==="withdrawals") { /]
+                       bg-blue-500 text-white
+                       [/}/]
+                       '>
+                        <i class='bi-download text-xl px-2'></i>
+                        Withdrawal history
+                    </a><a href="[/=appUrl/]/?entity=notifications"
+                       class='py-4 hover:bg-gray-300 capitalize block w-full text-left text-xl px-6
+                        [/ if (entity==="notifications") { /]
+                       bg-blue-500 text-whiteE
+                       [/}/]
+
+                       '>
+                        <i class='bi-bell text-xl px-2'></i>
+                        Notifications
+                    </a>
+                    </a><a href="[/=appUrl/]/?entity=settings"
+                       class='py-4 hover:bg-gray-300 capitalize block w-full text-left text-xl px-6
+
+                        [/ if (entity==="settings") { /]
+                       bg-blue-500 text-white
+                       [/}/]
+                       '>
+                        <i class='bi-sliders text-xl px-2'></i>
+                        Settings
+                    </a>
+                    </a><a href="/banking/authentications/log-out/"
+                       class='py-4 hover:bg-gray-300 capitalize block w-full text-left text-xl px-6  '>
+                        <i class='bi-box-arrow-left text-xl px-2'></i>
+                        Log out
+                    </a>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    <div class="hidden w-full self-stretch min-h-[100%]   md:flex md:flex-col pt-8 md:space-y-4 px-4">
+      <div class="flex flex-row justify-around space-x-4 ">
+        <div
+          class="bg-yellow-600 flex flex-row justify-between  p-4 w-[45%]"
+        >
+          <div class="flex flex-col">
+            <p class="text-black/70 font-bold text-xl">
+              Deposit Wallet Balance
+            </p>
+            <p class="text-white text-3xl py-2 font-bold">
+              $ [/= user.wallet /]
+            </p>
+          </div>
+          <i
+            class="bi bi-currency-dollar text-yellow-500 bg-black font-bold text-2xl px-3 py-2 self-center rounded-md"
+          ></i>
+        </div>
+        <div
+          class="bg-yellow-600 flex flex-row justify-between  p-4 w-[45%]"
+        >
+          <div class="flex flex-col">
+            <p class="text-black/70 font-bold text-xl">Bonus Balance</p>
+            <p class="text-white text-3xl py-2 font-bold">
+              $ [/= user.bonus /]
+            </p>
+          </div>
+          <i
+            class="bi bi-wallet2 text-yellow-500 bg-black font-bold text-2xl px-3 py-2 self-center rounded-md"
+          ></i>
+        </div>
+        <!-- <div class="bg-yellow-600 flex flex-row justify-between  p-4 w-[45%]">
+                <div class="flex flex-col">
+                    <p class="text-black/70 font-bold text-xl">Total Invest</p>
+                    <p class="text-white text-3xl py-2  font-bold">$10</p>
+
+                </div>
+                <i class="bi bi-cloud-arrow-down-fill text-yellow-500 bg-black font-bold text-2xl px-3 py-2 self-center rounded-md"></i>
+
+            </div> -->
+      </div>
+      <div class="flex flex-row justify-around space-x-4">
+        <div
+          class="bg-yellow-600 flex flex-row justify-between  p-4 w-[45%]"
+        >
+          <div class="flex flex-col">
+            <p class="text-black/70 font-bold text-xl">Total Deposit</p>
+            <p class="text-white text-3xl py-2 font-bold">
+              $ [/= user.deposits /]
+            </p>
+          </div>
+          <i
+            class="bi bi-credit-card text-yellow-500 bg-black font-bold text-2xl px-3 py-2 self-center rounded-md"
+          ></i>
+        </div>
+        <div
+          class="bg-yellow-600 flex flex-row justify-between  p-4 w-[45%]"
+        >
+          <div class="flex flex-col">
+            <p class="text-black/70 font-bold text-xl">Total Withdraw</p>
+            <p class="text-white text-3xl py-2 font-bold">
+              $ [/= user.withdrawals /]
+            </p>
+          </div>
+          <i
+            class="bi bi-cloud-arrow-down-fill text-yellow-500 bg-black font-bold text-2xl px-3 py-2 self-center rounded-md"
+          ></i>
+        </div>
+        <!-- <div class="bg-yellow-600 flex flex-row justify-between rounded-lg p-4 w-2/5">
+                <div class="flex flex-col">
+                    <p class="text-black/70 font-bold text-xl">Referral Earnings</p>
+                    <p class="text-white text-3xl py-2  font-bold">$10</p>
+
+                </div>
+                <i class="bi bi-people-fill text-yellow-500 bg-black font-bold text-2xl px-3 py-2 self-center rounded-md"></i>
+
+            </div> -->
+      </div>
+
+      
+      
+      <div class="flex flex-col justify-center items-center">
+
+        <div class="tradingview-widget-container w-full max-w-[95%] mt-8">
+          <div id="tradingview_3c6b2"></div>
+  <div class="tradingview-widget-copyright">
+    <a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank">
+    <span class="blue-text">BTCUSDT Chart</span>
+  </a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  "width": '100%',
+  "height": 610,
+  "symbol": "BINANCE:BTCUSDT",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "container_id": "tradingview_3c6b2"
+}
+);
+</script>
+</div>
+</div>
+
+
+
+    </div>
+
+    </div>  
+
+    <!-- Inclusion Madness -->
+
+    [/ if( locals.entity === 'notifications' ){ /] [/-
+    include('__notifications__') /] [/ } /] [/ if( locals.entity === 'tx_logs'
+    ){ /] [/- include('__tx_logs__') /] [/ } /] [/ if( locals.entity ===
+    'settings' ){ /] [/- include('__settings__') /] [/ } /] [/ if( locals.entity
+    === 'withdrawals' ){ /] [/- include('__withdrawal_logs__') /] [/ } /] [/ if(
+    locals.entity === 'deposits' ){ /] [/- include('__deposit_logs__') /] [/ }
+    /]
+
+    <!-- 
+
+    <section>
+        <div class="flex flex-col container space-y-5 bg-gray-800 shadow-lg rounded-md  mx-auto w-2/3 p-3 md:hidden">
+            <div class="flex flex-row text-white justify-between">
+                <p>Date</p>
+                <p>02/08/2022</p>
+
+            </div>
+            <div class="flex flex-row text-white justify-between">
+                <p>Transaction ID</p>
+                <p>---</p>
+
+            </div>
+            <div class="flex flex-row text-white justify-between">
+                <p>Amount</p>
+                <p class="text-green-800">$10</p>
+
+            </div>
+            <div class="flex flex-row text-white justify-between">
+                <p>Wallet</p>
+                <p class="bg-blue-500 rounded lg px-4">Deposit Wallet</p>
+
+            </div>
+            <div class="flex flex-row text-white justify-between">
+                <p>Details</p>
+                <p>You've got <br> sign up bonus</p>
+
+            </div>
+            <div class="flex flex-row text-white justify-between">
+                <p>Post balance</p>
+                <p>$10</p>
+
+            </div>
+            
+
+            
+        </div>
+
+    </section> -->
+
+    <section style="background-image: url('/banner.jpg')" class="mt-16">
+      <div class="p-28 items-center flex flex-col space-y-4">
+        <div>
+          <img src="/logo.png" alt="" height="200" width="200" class="cover" />
+        </div>
+        <div
+          class="text-white text-sm font-light flex flex-row w-[100%] items-center space-x-4 justify-center"
+        >
+          <p>Privacy & Policy</p>
+          <p>Terms & Conditions</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div
+        class="bg-black flex flex-col md:flex-row md:justify-between py-6 space-y-4 px-4"
+      >
+        <div class="flex flex-col">
+          <!-- <h3 class="text-blue-200">
+            Address: 66 Great Suffolk st, London SE1 OBL,UK
+          </h3> -->
+          <h3 class="text-blue-200">Email: info@bitbrokertrade.com</h3>
+          <!-- <h3 class="text-blue-200">Whatsapp: +1(616)606-5635</h3> -->
+          <h3 class="text-blue-200">
+            &copy 2023 Bitbroker. All rights reserved.
+          </h3>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex flex-row space-x-4 text-white p-0 m-0">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-pinterest"></i>
+            <i class="bi bi-linkedin"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

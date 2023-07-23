@@ -1,0 +1,81 @@
+<div class="sticky z-30 bg-black top-0 left-0 right-0 shadow-sm">
+  <div class="flex md:flex-row items-center justify-between p-4 h-16">
+    <div
+      class="flex flex-row flex-nowrap justify-center items-center space-x-2 cursor-default select-none"
+    >
+      <!-- <img src='/favicon.ico'
+                 alt='logo'
+                 height="300"
+                 class='rounded-full h-8 md:h-10 md:w-28 w-24'
+                 width="200" /> -->
+      <h1 class="font-bold uppercase text-white text-lg md:text-2xl font-black">
+        [/= siteName /]
+      </h1>
+    </div>
+
+    <div class="md:w-2/4">
+      <i id="openMenu" class="bi-list md:hidden text-4xl text-white"></i>
+      <ul
+        id="menu"
+        class="hidden fixed bg-white md:bg-black md:relative top-0 left-0 right-0 bottom-0 z-20 md:flex flex-col md:flex-row items-center justify-around"
+      >
+        <a
+          href="/"
+          class="text my-1 block w-full text-center capitalize hover:text-blue-400 font-semibold md:text-white text-black font-bold transition-colors font-sans text-sm md:text-sm"
+        >
+          <i class="bi-house-door text-base"></i>&nbsp; Home
+        </a>
+        <a
+          href="[/=appUrl/]/?component_ref=dashboard"
+          class="text-center my-1 block w-full capitalize hover:text-blue-400 font-semibold md:text-white text-black font-bold transition-colors font-sans text-sm md:text-sm"
+        >
+          <i class="bi-speedometer2 text-base"></i>&nbsp; Dashboard </a
+        ><a
+          href="[/= appUrl /]/?component_ref=transactions&sub_component_ref=D"
+          class="text-center my-1 block w-full capitalize hover:text-blue-400 font-semibold md:text-white text-black font-bold transition-colors font-sans text-sm md:text-sm"
+        >
+          <i class="bi-cash-stack text-base"></i>&nbsp; Deposit
+        </a>
+
+        <a
+          href="[/= appUrl /]/?component_ref=transactions&sub_component_ref=W"
+          class="text-center my-1 block w-full capitalize hover:text-blue-400 font-semibold md:text-white text-black font-bold transition-colors font-sans text-sm md:text-sm"
+        >
+          <i class="bi-download text-base"></i>&nbsp; Withdrawal
+        </a>
+
+        <a
+          href="/about"
+          class="text-center my-1 block w-full capitalize hover:text-blue-400 font-semibold md:text-white text-black font-bold transition-colors font-sans text-sm md:text-sm"
+        >
+          <i class="bi-info-circle text-base"></i>&nbsp; About us
+        </a>
+
+        [/ if (auth.user) { /]
+
+        <a
+          href="/banking/authentications/log-out/"
+          role="button"
+          class="text-center my-1 block w-full capitalize bg-blue-500 hover:bg-blue-400 font-semibold text-white py-3 px-4 transition-colors font-sans text-sm md:text-sm"
+        >
+          Log out
+        </a>
+
+        [/ } else { /]
+        <a
+          href="/banking/authentications/sign-up/"
+          role="button"
+          class="text-center my-1 block w-full capitalize bg-blue-500 hover:bg-blue-400 font-semibold text-white py-3 px-4 transition-colors font-sans text-sm md:text-sm"
+        >
+          Sign up
+        </a>
+
+        [/ } /]
+
+        <div class="md:hidden" id="closeMenu">
+          <i class="bi-x-circle text-4xl md:text-white text-black"></i>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

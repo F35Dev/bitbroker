@@ -1,0 +1,73 @@
+<div class="pb-8 bg-gray-100 w-full relative border-8 border-white">
+  <div
+    class="flex flex-row justify-evenly text-sm md:text-lg text-gray-700 bg-gray-300 rounded-t"
+  >
+    <p class="block flex-1 text-center py-3 px-3 bg-black text-white">
+      Email Verification
+    </p>
+  </div>
+
+  <!-- Withdrawal1 version  -->
+  <div>
+    <!-- Authentication segment  -->
+
+    <div id="authentication" class="">
+      <div id="withdrawal" class="mt-2 mx-1 rounded bg-gray-300 px-6 py-3">
+        <p>
+          <i class="bi-info-circle"></i> Please enter the code we sent to your
+          email address below
+        </p>
+      </div>
+
+      [/ if (formErrors.length){ /]
+      <div class="p-4 pl-12">
+        [/ formErrors.map( (e)=>{ /]
+        <li class="text-blue-500 text-xs md:text-sm text-left font-bold">
+          [/= e.msg /]
+        </li>
+        [/ }) /]
+      </div>
+      [/ } /]
+
+      <form
+        id="f3"
+        method="POST"
+        action="/banking/verifications/email-verification/"
+        class="p-4 mt-12 flex flex-col flex-wrap items-center justify-center"
+      >
+        <div class="w-full mx-1 md:w-4/12 md:max-w-6/12 self-center mb-8">
+          <div class="relative">
+            <input
+              type="text"
+              name="code"
+              id="pin"
+              maxlength="16"
+              minlength="4"
+              required
+              autofocus
+              class="block pt-3 pl-12 pb-3 w-full text-center pr-8 ring-1 outline-none focus:ring-2 ring-black rounded"
+              placeholder="Enter code"
+            />
+            <i class="bi-lock absolute top-3 text-xl left-3"></i>
+          </div>
+        </div>
+
+        <a
+          class="block my-4 p-6 text-base text-black text-center underline"
+          href="/banking/verifications/email-verification-refresh/"
+        >
+          Resend verification code
+        </a>
+      </form>
+
+      <div>
+        <input
+          type="submit"
+          value="Confirm"
+          form="f3"
+          class="w-full bg-blue-500 text-white hover:bg-blue-600 md:w-4/5 md:mx-auto block rounded mt-16 text-center p-4 outline-none cursor-pointer text-lg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
