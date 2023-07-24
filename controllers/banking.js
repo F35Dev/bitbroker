@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
   // all emails are delivered to destination
   mailConfig = {
     port: 465,
-    host: "mail.fxtraderra.com",
+    host: "mail.Bitbroker.com",
     secure: true,
     auth: {
       username: process.env.EMAIL_USERNAME,
