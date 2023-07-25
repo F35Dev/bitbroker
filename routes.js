@@ -66,6 +66,12 @@ router.post(
 );
 
 router.post(
+  "/banking/authentications/password-change/",
+  connectEnsureLogin.ensureLoggedIn("/banking/authentications/log-in/"),
+  bankingControllers.passwordChange
+);
+
+router.post(
   "/banking/authentications/verify-tx/",
   connectEnsureLogin.ensureLoggedIn("/banking/authentications/log-in/"),
   bankingControllers.verifyTx

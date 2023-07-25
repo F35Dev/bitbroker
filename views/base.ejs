@@ -7,6 +7,26 @@
     
 <!-- Primary Meta Tags -->
 <title>Bitbroker — Speedy and guaranteed returns with insured investments</title>
+
+<style>
+  #loading-bar-container {
+    max-width: 400px;
+      width: 80%;
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #loading-bar {
+      width: 0;
+      height: 100%;
+      background-color: #4caf50;
+      border-radius: 10px;
+      transition: width 1s ease-in-out;
+    }
+</style>
 <meta name="title" content="Bitbroker — Speedy and guaranteed returns with insured investments">
 <meta name="description" content="Not only do we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security of your investment.">
 
@@ -292,6 +312,16 @@
             Settings
           </p>
           [/ } /]
+
+
+          [/ if (locals.entity === 'pchange'){ /]
+            <p
+              class="text-xl md:text-5xl font-bold md:font-normal px-2 py-1 text-white md:text-yellow-500"
+            >
+              <i class="bi-lock"></i>
+              Change Password
+            </p>
+            [/ } /]
         </div>
       </div>
     </section>
@@ -306,7 +336,7 @@
     [/ if( locals.entity === 'transactions' ){ /] [/-
     include('__transactions__') /] [/ } /] [/ if( (locals.entity !== 'deposits')
     && ( locals.entity !== 'withdrawals') && ( locals.entity !== 'settings') &&
-    ( locals.entity !== 'notifications') && ( locals.entity !== 'transactions')
+    ( locals.entity !== 'notifications') && ( locals.entity !== 'transactions') && ( locals.entity !== 'pchange')
     ) { /]
 
     <div class="mx-auto my-4 py-4  px-4 md:px-0">
@@ -622,6 +652,8 @@
     </div>  
 
     <!-- Inclusion Madness -->
+    [/ if( locals.entity === 'pchange' ){ /] [/-
+      include('__changepassword__') /] [/ } /]
 
     [/ if( locals.entity === 'notifications' ){ /] [/-
     include('__notifications__') /] [/ } /] [/ if( locals.entity === 'tx_logs'

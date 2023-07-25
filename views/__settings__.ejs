@@ -1,35 +1,26 @@
 <div class=" ">
+  <p class="text-left px-6 py-6 text-2xl font-bold text-white">
+    Account information
+  </p>
 
-  <p
-  class="text-left px-6 py-6 text-2xl font-bold text-white"
->
-  Account information
-</p>
-
-  <div
-    class="flex bg-gray-800 flex-col justify-center  items-center mt-6"
-  >
+  <div class="flex bg-gray-800 flex-col justify-center items-center mt-6">
     <div class="px-6 py-4 rounded bg-gray-800 w-full relative">
-      <h2 class="text-left font-bold  text-white text-2xl my-2">
+      <h2 class="text-left font-bold text-white text-2xl my-2">
         Personal data
       </h2>
       <div class="py-4">
         <p class="text-lg py-1 text-left text-white">
-          Firstname: [/= user.firstname  /]
+          Firstname: [/= user.firstname /]
         </p>
         <!-- <p class='text-lg py-1 text-left text-white'> Date of birth : 21/02/1991 </p> -->
         <p class="text-lg py-1 text-left text-white">
           Lastname: [/= user.lastname /]
         </p>
       </div>
-
-     
     </div>
 
-   
-
     <div class="px-6 py-4 rounded bg-gray-800 w-full relative">
-      <h2 class="text-left font-bold  text-white text-2xl my-2">
+      <h2 class="text-left font-bold text-white text-2xl my-2">
         Email Address
       </h2>
       <div class="py-4">
@@ -37,37 +28,33 @@
           Email: [/= user.email /]
         </p>
       </div>
-
-     
     </div>
 
     <div class="px-6 py-4 rounded bg-gray-800 w-full relative">
-      <h2 class="text-left font-bold  text-white text-2xl my-2">
+      <h2 class="text-left font-bold text-white text-2xl my-2">
         Residential Info
       </h2>
       <div class="py-4">
-        <p class="text-lg py-1 text-left text-white"> Country: NA</p>
-        <p class="text-lg py-1 text-left text-white"> Country code: NA</p>
-
+        <p class="text-lg py-1 text-left text-white">Country: NA</p>
+        <p class="text-lg py-1 text-left text-white">Country code: NA</p>
       </div>
-
-     
     </div>
 
     <div class="px-6 py-4 rounded bg-gray-800 w-full relative">
-      <h2 class="text-left font-bold  text-white text-2xl my-2">
-        Security
-      </h2>
+      <h2 class="text-left font-bold text-white text-2xl my-2">Security</h2>
       <div class="py-4">
-        <p class="text-lg py-1 text-left text-white">
-          Email verified: YES
-        </p>
+        <p class="text-lg py-1 text-left text-white">Email verified: YES</p>
         <p class="text-lg py-1 text-left text-white">
           Password: ***********************
         </p>
-      </div>
 
-     
+        <a
+          href="/banking/app?entity=pchange"
+          class="text-sky-500 hover:underline"
+        >
+          Change password
+        </a>
+      </div>
     </div>
   </div>
 </div>

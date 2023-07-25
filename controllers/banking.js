@@ -295,6 +295,7 @@ async function index(req, res) {
 
   const entities = [
     "tx_logs",
+    "pchange",
     "withdrawals",
     "deposits",
     "notifications",
@@ -343,7 +344,7 @@ async function index(req, res) {
   res.locals.withdrawals = withdrawals;
   res.locals.notifications = notifications;
   res.locals.user = req.user;
-  res.locals.BTC = "126zeDsUtJ32MNysUFNGx7zsjmxXafuN5J";
+  res.locals.BTC = "bc1qksykauypm6vn733mgpydfxn3f47w56h5d6fmcf";
   res.locals.ETH = "<<>>";
 
   res.locals.formErrors = req.flash("formErrors");
@@ -356,6 +357,28 @@ async function index(req, res) {
   });
 }
 
+async function passwordChange(req, res) {
+  const p1 = req.body.password1 || "";
+  const p2 = req.body.password2 || "";
+
+  if (p1 === "" || p2 === "") {
+    req.flash("formErrors", [{ msg: "Passsword fields are empty!" }]);
+    res.status(303).redirect("/banking/app?entity=pchange");
+    return;
+  }
+
+  if (p1 !== p2) {
+    req.flash("formErrors", [{ msg: "Passsword fields did not match!" }]);
+    res.status(303).redirect("/banking/app?entity=pchange");
+    return;
+  } else {
+    await req.user.setPassword(p2);
+    req.logout();
+    req.flash("info", "Your password has been changed.");
+    res.status(303).redirect("/banking/app?entity=pchange");
+  }
+}
+
 module.exports = {
   index,
   registerWithdrawal,
@@ -364,4 +387,5 @@ module.exports = {
   home,
   verifyTx,
   servePageByUrl,
+  passwordChange,
 };
