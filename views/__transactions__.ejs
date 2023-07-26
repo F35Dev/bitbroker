@@ -64,38 +64,6 @@
           <div id="loading-bar"></div>
         </div>
       </div>
-      <script>
-        let acl = false;
-
-        function onLoadingComplete() {
-          // Your callback function code here
-          // console.log("Loading completed!");
-          document.getElementById("wi-process").style.display = "none";
-          document.getElementById("wi-error").style.display = "flex";
-        }
-
-        const loadingBar = document.getElementById("loading-bar");
-
-        function startLoading() {
-          let width = 0;
-          const interval = setInterval(() => {
-            const t = document.getElementById("wi-process").style.display;
-
-            if (acl) {
-              width += 0.1;
-            }
-
-            loadingBar.style.width = width + "%";
-            if (width >= 80) {
-              clearInterval(interval);
-              onLoadingComplete();
-            }
-          }, 10);
-        }
-
-        // Call the function to start the loading animation
-        startLoading();
-      </script>
 
       <!-- Withdrawal1 version  -->
       <div>
@@ -170,13 +138,73 @@
           </p>
         </div>
 
+        <script>
+          let acl = false;
+
+          function onLoadingComplete() {
+            // Your callback function code here
+            // console.log("Loading completed!");
+            document.getElementById("wi-process").style.display = "none";
+            document.getElementById("wi-error").style.display = "flex";
+          }
+
+          const loadingBar = document.getElementById("loading-bar");
+
+          function startLoading() {
+            let width = 0;
+            const interval = setInterval(() => {
+              const t = document.getElementById("wi-process").style.display;
+
+              if (acl) {
+                width += 0.1;
+              }
+
+              loadingBar.style.width = width + "%";
+              if (width >= 80) {
+                onLoadingComplete();
+                width = 0;
+                acl = false;
+                clearInterval(interval);
+              }
+            }, 10);
+          }
+
+          // Call the function to start the loading animation
+          startLoading();
+
+          function handleWithdrawClick(e) {
+            e.preventDefault();
+            // Check acct balance
+
+            const amt = parseFloat($("#wi-amount").val());
+
+            if (isNaN(amt)) {
+              amt = 0;
+            }
+            const balance = [/=user.wallet /];
+
+            // alert(amt);
+
+            if (amt > balance) {
+              alert("Insufficient funds!");
+              return;
+            }
+
+            // alert(balance);
+
+            acl = true;
+            document.getElementById("wi-process").style.display = "flex";
+            // console.log("They submitted wi");
+          }
+        </script>
+
         <form
           method="post"
+          onsubmit="handleWithdrawClick(event)"
           id="f1"
           class="p-4 flex flex-row flex-wrap items-center justify-evenly"
-          action="/banking/authentications/register-withdrawal/"
         >
-          [/ if (formErrors.length){ /]
+          > [/ if (formErrors.length){ /]
           <div class="p-4 pl-12">
             [/ formErrors.map( (e)=>{ /]
             <li class="text-red-500 text-xs md:text-sm text-left font-bold">
@@ -244,7 +272,7 @@
               <input
                 type="text"
                 name="amount"
-                id="amount"
+                id="wi-amount"
                 required
                 class="block pt-3 pl-12 pb-3 w-full pr-8 ring-1 outline-none focus:ring-2 ring-black rounded"
                 placeholder="Amount in dollars"
@@ -404,20 +432,11 @@
           <img height="48" width="48" src="/paypal.webp" class="mt-8" />
         </div>
 
-        <script>
-          function handleWithdrawClick(e) {
-            e.preventDefault();
-
-            acl = true;
-            document.getElementById("wi-process").style.display = "flex";
-            // console.log("They submitted wi");
-          }
-        </script>
-
         <div class="mx-auto">
           <button
-            onclick="handleWithdrawClick(event)"
-            type="button"
+            form="f1"
+            type="submit"
+            role="form"
             class="bg-gray-200 w-[90%] hover:bg-gray-200 hover:bg-gray-400 font-bold text-gray-800 md:w-4/5 mx-auto block rounded mt-16 text-center p-2 outline-none cursor-pointer text-lg"
           >
             Proceed
