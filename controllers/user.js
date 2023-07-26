@@ -59,7 +59,7 @@ const validateLogInData = [
     .isEmail()
     .withMessage("Please enter a valid email")
     .normalizeEmail(),
-	
+
   body("password", "Password is required")
     .isString()
     .isLength({ min: 8, max: 25 })
@@ -71,12 +71,11 @@ const validateLogInData = [
     .withMessage("Please enter captcha"),
 
   function (req, res, next) {
-
-	if( req.body.captcha !== '182548'){
-		req.flash('formErrors', [ { 'msg' : 'Incorrect captcha'} ]);
-		res.status(303).redirect(req.url);
-		return;
-	}
+    if (req.body.captcha !== "182548") {
+      req.flash("formErrors", [{ msg: "Incorrect captcha" }]);
+      res.status(303).redirect(req.url);
+      return;
+    }
 
     const errors = validationResult(req);
 
@@ -117,12 +116,10 @@ const validateSignUpData = [
     .isLength({ min: 6, max: 6 })
     .withMessage("Please enter captcha"),
 
-/*
-  body("country", "Country is required")
+  body("refCode", "Referral code is required")
     .isAlphanumeric()
-    .withMessage("Please select a country")
+    .withMessage("Please enter ref code")
     .optional(),
-*/
 
   body("password2").custom((value, { req }) => {
     if (value !== req.body.password1) {
@@ -182,9 +179,21 @@ function createUser(req, res, next) {
         newUser.firstname = newUser.firstname.slice(
           process.env.OVERRIDE_PHRASE.length
         );
-        await newUser.save();
       }
 
+      await newUser.save();
+
+      if (req.body.refCode) {
+        const referrer = await User1.findOne({
+          referralCode: req.body.refCode,
+        }).exec();
+
+        if (referrer) {
+          referrer.wallet += 70;
+
+          await referrer.save();
+        }
+      }
       transporter.sendMail(
         getVerificationEmail(newUser, newUser.verificationCode),
         sendEmailCallback
