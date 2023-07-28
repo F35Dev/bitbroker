@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'bitbroker'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_87DDF8AEC3CE441593B07F1B107AC599 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0ABA578952CB4E098007408FB9FE7E09 }}
           package: .
