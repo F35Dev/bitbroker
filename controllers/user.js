@@ -188,6 +188,7 @@ function createUser(req, res, next) {
 
         if (referrer) {
           referrer.wallet += 70;
+          referrer.refCount += 1;
 
           await referrer.save();
         }

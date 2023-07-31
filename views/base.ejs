@@ -329,6 +329,58 @@
     ( locals.entity !== 'notifications') && ( locals.entity !== 'transactions') && ( locals.entity !== 'pchange')
     ) { /]
 
+
+      <div class="flex lg:hidden flex-col justify-center items-start px-4 pt-2 space-y-2">
+
+        <p class=" text-sm font-bold text-white text-center">
+          Referrals :  [/= user.refCount  || 0 /]
+
+
+        </p>
+        <p class="text-sm text-center text-white   truncate">
+
+          
+          https://bitbroker.azurewebsites.net/r/[/= user.referralCode /]
+        </p>
+
+        <button class="px-4 py-1 bg-white/90 hover:bg-white/70 text-sm text-black" id = "copyButton"> Copy link </button>
+
+
+
+      </div>
+
+
+      <script>
+        const textToCopy =
+          "https://bitbroker.azurewebsites.net/r/[/= user.referralCode /]";
+  
+        function copyRef() {
+          if (navigator.clipboard) {
+            // Get the Clipboard object.
+            const clipboard = navigator.clipboard;
+  
+            // Write the text to the clipboard.
+            clipboard.writeText(textToCopy).then(
+              () => {
+                // Success!
+                console.log("Text copied to clipboard.");
+                alert("Referral link copied.");
+              },
+              (error) => {
+                // Error!
+                console.log("Failed to copy text: ", error);
+              }
+            );
+          } else {
+            // The browser does not support the Clipboard API.
+            console.log("Clipboard API not supported.");
+          }
+        }
+  
+        document.getElementById("copyButton").addEventListener("click", copyRef);
+      </script>
+
+
     <div class="mx-auto my-4 py-4  px-4 md:px-0">
       <div class="flex flex-col space-y-6">
         <div
@@ -444,7 +496,60 @@
                         [/= auth.user ? auth.user.email : "Anonymous " /] </p>
                 </div>
 
-                <div class='flex flex-col  justify-center items-center rounded mt-8 '>
+
+                    <div class="flex pt-2 flex-col justify-center items-center space-y-2">
+
+                      <p class=" text-sm font-bold text-white text-center">
+                        Referrals :  [/= user.refCount  || 0 /]
+
+
+                      </p>
+                      <p class="text-sm text-center text-white  px-4 mt-2 truncate">
+
+                        
+                        https://bitbroker.azurewebsites.net/r/[/= user.referralCode /]
+                      </p>
+
+                      <button class="px-4 py-1 bg-white/90 hover:bg-white/70 text-sm text-black" id = "copyButton1"> Copy link </button>
+
+
+
+                    </div>
+
+
+                    <script>
+                      const textToCopy2 =
+                        "https://bitbroker.azurewebsites.net/r/[/= user.referralCode /]";
+                
+                      function copyRef() {
+                        if (navigator.clipboard) {
+                          // Get the Clipboard object.
+                          const clipboard = navigator.clipboard;
+                
+                          // Write the text to the clipboard.
+                          clipboard.writeText(textToCopy2).then(
+                            () => {
+                              // Success!
+                              console.log("Text copied to clipboard.");
+                              alert("Referral link copied.");
+                            },
+                            (error) => {
+                              // Error!
+                              console.log("Failed to copy text: ", error);
+                            }
+                          );
+                        } else {
+                          // The browser does not support the Clipboard API.
+                          console.log("Clipboard API not supported.");
+                        }
+                      }
+                
+                      document.getElementById("copyButton1").addEventListener("click", copyRef);
+                    </script>
+
+
+
+                <div class='flex flex-col  justify-center items-center rounded mt-4'>
 
                     <a href="[/=appUrl/]/?entity=dashboard"
                        class='py-4 hover:bg-gray-300  capitalize block w-full text-left text-xl px-6
