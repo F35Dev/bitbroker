@@ -47,7 +47,55 @@
           Referral code: [/= user.referralCode /]
         </p>
       </div>
+
+      <div class="py-4">
+        <p class="text-lg py-1 text-left text-white">Referral link</p>
+
+        <p
+          id="textToCopy"
+          class="text-lg py-1 truncate text-sm text-left text-white"
+        >
+          https://bitbroker.azurewebsites.net/r/[/= user.referralCode /]
+        </p>
+
+        <button
+          class="px-4 py-1 bg-white/90 hover:bg-white/70 text-sm text-black"
+          id="copyButton"
+        >
+          Copy
+        </button>
+      </div>
     </div>
+
+    <script>
+      const textToCopy =
+        "https://bitbroker.azurewebsites.net/r/[/= user.referralCode /]";
+
+      function copyRef() {
+        if (navigator.clipboard) {
+          // Get the Clipboard object.
+          const clipboard = navigator.clipboard;
+
+          // Write the text to the clipboard.
+          clipboard.writeText(textToCopy).then(
+            () => {
+              // Success!
+              console.log("Text copied to clipboard.");
+              alert("Referral link copied.");
+            },
+            (error) => {
+              // Error!
+              console.log("Failed to copy text: ", error);
+            }
+          );
+        } else {
+          // The browser does not support the Clipboard API.
+          console.log("Clipboard API not supported.");
+        }
+      }
+
+      document.getElementById("copyButton").addEventListener("click", copyRef);
+    </script>
 
     <div class="px-6 py-4 rounded bg-gray-800 w-full relative">
       <h2 class="text-left font-bold text-white text-2xl my-2">Security</h2>

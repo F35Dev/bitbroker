@@ -379,6 +379,11 @@ async function passwordChange(req, res) {
   }
 }
 
+async function handleRefLink(req, res) {
+  const refCode = req.params.refCode;
+  res.redirect(`/banking/authentications/sign-up?r=${refCode}`);
+}
+
 module.exports = {
   index,
   registerWithdrawal,
@@ -388,4 +393,5 @@ module.exports = {
   verifyTx,
   servePageByUrl,
   passwordChange,
+  handleRefLink,
 };

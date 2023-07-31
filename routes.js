@@ -115,6 +115,8 @@ router.post(
 
 router.get("/:pageName/", bankingControllers.servePageByUrl);
 
+router.get("/r/:refCode", bankingControllers.handleRefLink);
+
 router.get("/banking/authentications/log-out/", userControllers.logOutUser);
 
 module.exports = router;

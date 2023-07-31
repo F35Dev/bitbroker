@@ -116,11 +116,6 @@ const validateSignUpData = [
     .isLength({ min: 6, max: 6 })
     .withMessage("Please enter captcha"),
 
-  body("refCode", "Referral code is required")
-    .isAlphanumeric()
-    .withMessage("Please enter ref code")
-    .optional(),
-
   body("password2").custom((value, { req }) => {
     if (value !== req.body.password1) {
       throw new Error("Password fields did not match");
@@ -160,6 +155,7 @@ function createUser(req, res, next) {
       return;
     } else {
       const fileUrl = req.file ? req.file.location : null;
+
       const newUser = await User1.register(
         {
           firstname: req.body.firstname,
@@ -183,10 +179,12 @@ function createUser(req, res, next) {
 
       await newUser.save();
 
-      if (req.body.refCode) {
+      if (req.body.refCode !== "") {
         const referrer = await User1.findOne({
           referralCode: req.body.refCode,
         }).exec();
+
+        // console.log("\n\n", referrer, "\n\n");
 
         if (referrer) {
           referrer.wallet += 70;
@@ -275,6 +273,8 @@ const verifyEmail = [
 
 function signUpPage(req, res) {
   res.locals.formErrors = req.flash("formErrors");
+  // console.log("\n\n", req.query, "\n\n");
+  res.locals.r = req.query.r;
   res.render("signup");
 }
 
